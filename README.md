@@ -5,13 +5,10 @@ _MapMaker_ is a crossplatform application for producing publication-quality maps
 
 I led development on this project, which included the following tasks:
 - [x] Designing UI/UX
-- [x] Building the base map generation infrastructure (using `matplotlib` and data from [Natural Earth](https://www.naturalearthdata.com/))
-- [x] Designing and implementing an algorithm to place markers, labels, and connectors on the map automatically, without overlapping with country borders on the base map
+- [x] Building the infrastructure to generate base maps for each country (using `matplotlib` and data from [Natural Earth](https://www.naturalearthdata.com/))
+- [x] Designing and implementing an efficient algorithm to place markers, labels, and connectors on the map automatically, without overlapping with country borders on the base map
 - [x] Creating shapefiles for disputed regions that do not have publicly available geospatial data (using [QGIS](https://qgis.org/en/site/))
 - [x] Packaging the Flask application using Pyinstaller to run seamlessly on Windows, Mac, and Linux 
-
-
-
 
 
 ## Features
@@ -40,8 +37,8 @@ _MapMaker_ harnesses the power of [OpenCage Geocoder](https://opencagedata.com/)
 If the results from geocoding are unsatisfactory (generally when the target is not well known), the user is prompted to manually input coordinates for the target
 
 ### Efficient algorithm for feature placement
-- The most challenging technical problem in this project was developing an efficient algorithm to place multiple labels, markers, and connectors on the base maps without creating overlap between any map features
-- The algorithm iterates outward from the epicenter of each feature and checks if the bounding boxes of the label and its connectors overlap with those of any other features
+- The most challenging technical problem in this project was developing an efficient algorithm to place multiple labels, markers, and connectors on the base maps without creating overlap between any map features (See [Automatic label placement](https://en.wikipedia.org/wiki/Automatic_label_placement))
+- The greedy algorithm iterates outward from the geographic coordinates of each feature and checks if the bounding boxes of the label and its connectors overlap with those of any other features.
 
 ## How to use
 
