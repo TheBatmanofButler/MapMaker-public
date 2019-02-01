@@ -1,9 +1,9 @@
 # MapMaker
-### (This is the publicly available documentation for _MapMaker_, which is a closed source application under copyright by Pedal Technologies, Inc.)
+#### (This is the publicly available documentation for _MapMaker_, which is a closed source application under copyright by Pedal Technologies, Inc. The Eurasianet logo and branding are property of Eurasianet)
 
 ![Screenshot of application](images/main-screenshot.png)
 
-_MapMaker_ is a crossplatform application for producing publication-quality maps of countries in Central Asia and the South Caucasus. [Pedal Technologies](http://pedal.tech/) was commissioned by [EurasiaNet](https://eurasianet.org/) to design and build _MapMaker_, and it has been used to produce maps for several of their articles (such as [here](https://eurasianet.org/georgian-coal-town-longs-for-chinese-rescue) and [here](https://eurasianet.org/azerbaijanis-displaced-by-war-seek-to-keep-memories-alive)). Eurasianet is a media organization based at Columbia University’s Harriman Institute, one of the leading centers in North America of scholarship on Eurasia.
+_MapMaker_ is a crossplatform application for producing publication-quality maps of countries in Central Asia and the South Caucasus. [Pedal Technologies](http://pedal.tech/) was commissioned by [Eurasianet](https://eurasianet.org/) to design and build _MapMaker_, and it has been used to produce maps for several of their articles (such as [here](https://eurasianet.org/georgian-coal-town-longs-for-chinese-rescue) and [here](https://eurasianet.org/azerbaijanis-displaced-by-war-seek-to-keep-memories-alive)). Eurasianet is a media organization based at Columbia University’s Harriman Institute, one of the leading centers in North America of scholarship on Eurasia.
 
 I led development on this project, which included the following tasks:
 - [x] Designing UI/UX
@@ -27,7 +27,7 @@ I led development on this project, which included the following tasks:
   - Armenia
 
 ### Produce maps in English or Russian
-EurasiaNet reports on news to a diverse audience of readers, so the user can produce maps in either of these two languages with ease
+Eurasianet reports on news to a diverse audience of readers, so the user can produce maps in either of these two languages with ease
 ![English and Russian functionality demo](images/russian.png)
 
 ### Autocomplete for target names
@@ -44,7 +44,12 @@ If the results from geocoding are unsatisfactory (generally when the target is n
 ### Efficient algorithm for feature placement
 - The most challenging technical problem in this project was developing an efficient algorithm to place multiple labels, markers, and connectors on the base maps without creating overlap between any map features (See [Automatic label placement](https://en.wikipedia.org/wiki/Automatic_label_placement))
 - The greedy algorithm iterates outward from the geographic coordinates of each feature and checks if the bounding boxes of the label and its connectors overlap with those of any other features.
+- In the demonstration below, I have made the bounding boxes visible to illustrate how the algorithm finds the locally optimal location for each label:
 ![Placement algorithm demo](images/algo.gif)
+
+- This is what the map looks like when completed:
+![Placement algorithm demo finished](images/Baku.png)
+
 
 ## How to use
 
